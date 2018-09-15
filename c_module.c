@@ -6,6 +6,8 @@
 // Sends: number, string, byte array. Returns string.
 // Note that wrapping code is Javascript.
 
+// Hint: must be "char* c_buf", not "char *c_buf", otherwise there will
+// be errors upon loading module
 EM_JS(char*, c_to_js, (int a, const char* b,
 			unsigned char* c_buf, int c_len),
 {
