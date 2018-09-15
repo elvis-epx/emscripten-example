@@ -6,8 +6,11 @@ function c_to_js(n, s, cbuf, clen)
 	console.log("c_to_js n:" + n + " s:" + s);
 
 	// convert C byte array to Javascript array
-	var ac = new Uint8Array(m.HEAPU8.buffer, cbuf, clen);
-	console.log("\t byte array from C: " + ac);
+	var unsafe = new Uint8Array(m.HEAPU8.buffer, cbuf, clen);
+	// copy data from heap to Javascript before C frees it
+	var buf = new Uint8Array(unsafe);
+
+	console.log("\t byte array from C: " + buf);
 
 	// return a string
 	return "delta=∆.";
