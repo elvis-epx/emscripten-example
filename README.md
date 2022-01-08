@@ -138,7 +138,7 @@ as possible, and not to use optimization tags unless absolutely necessary.
 Otherwise, the code above fails silently. Once the problem is found out,
 it is easy to do the right thing:
 
-`memcpy(buffer_position, &amp;data, 2);`
+`memcpy(buffer_position, &value, 2);`
 
 # References
 
